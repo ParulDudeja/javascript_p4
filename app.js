@@ -1,8 +1,6 @@
 "use strict";
 // function from rgb value into hex
-function hex(r, g, b) {
-  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-}
+
 // console.log(hex(205, 109, 42));
 function makeColor(r, g, b) {
   const color = {};
@@ -14,8 +12,12 @@ function makeColor(r, g, b) {
     const { r, g, b } = this;
     return `rgb(${r},${g},${b})`;
   };
+  color.hex = function () {
+    const { r, g, b } = this;
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  };
   return color;
 }
 
 const firstColor = makeColor(45, 12, 32);
-firstColor.rgb;
+firstColor.hex();
