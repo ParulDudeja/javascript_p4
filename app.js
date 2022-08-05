@@ -18,6 +18,6 @@ function makeColor(r, g, b) {
   };
   return color;
 }
-
+//new color
 const firstColor = makeColor(45, 12, 32);
 firstColor.hex();
