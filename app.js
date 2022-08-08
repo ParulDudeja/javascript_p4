@@ -57,13 +57,15 @@ class Color {
     this.b = b;
     this.name = name;
   }
-  rgb() {
+  innerRGB() {
     const { r, g, b } = this;
-    return `rgb(${r}, ${g}, ${b})`;
+    return `${r}, ${g}, ${b}`;
+  }
+  rgb() {
+    return `rgb(${this.innerRGB()})`;
   }
   rgba(a = 1.0) {
-    const { r, g, b } = this;
-    return `rgb(${r}, ${g}, ${b},${a})`;
+    return `rgba(${this.innerRGB()},${a})`;
   }
   hex() {
     const { r, g, b } = this;
