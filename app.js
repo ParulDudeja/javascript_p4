@@ -29,6 +29,7 @@ function Color(r, g, b) {
   this.b = b;
   console.log(this);
 }
+//this will create a prototype in Color not as a function like we had in factory methods
 Color.prototype.rgb = function () {
   const { r, g, b } = this;
   return `rgb(${r}, ${g}, ${b})`;
